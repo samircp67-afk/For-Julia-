@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para você 💜🌻</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            /* Fundo roxo */
+            background:
+                radial-gradient(circle at 20% 20%, rgba(166, 91, 255, 0.35), transparent 30%),
+                radial-gradient(circle at 80% 80%, rgba(111, 42, 180, 0.35), transparent 30%),
+                linear-gradient(135deg, #160022, #3b075d, #21002f);
+        }
+
+        /* =========================
+           GIRASSÓIS DECORATIVOS
+        ========================== */
+
+        .girassol {
+            position: fixed;
+            font-size: 75px;
+            z-index: 0;
+            opacity: 0.85;
+            animation: flutuar 5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .g1 {
+            top: 5%;
+            left: 3%;
+            transform: rotate(-15deg);
+        }
+
+        .g2 {
+            top: 20%;
+            right: 2%;
+            font-size: 55px;
+            animation-delay: 1s;
+        }
+
+        .g3 {
+            bottom: 10%;
+            left: 4%;
+            font-size: 60px;
+            animation-delay: 2s;
+        }
+
+        .g4 {
+            bottom: 5%;
+            right: 5%;
+            font-size: 80px;
+            animation-delay: 3s;
+        }
+
+        .g5 {
+            top: 50%;
+            left: -15px;
+            font-size: 45px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes flutuar {
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(5deg);
+            }
+        }
+
+        /* =========================
+           PARTÍCULAS
+        ========================== */
+
+        .particula {
+            position: fixed;
+            width: 5px;
+            height: 5px;
+            background: #e5b8ff;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: subir 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes subir {
+            from {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.7;
+            }
+
+            80% {
+                opacity: 0.7;
+            }
+
+            to {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           CONTEÚDO
+        ========================== */
+
+        .container {
+            position: relative;
+            z-index: 2;
+            width: 90%;
+            max-width: 850px;
+            margin: auto;
+            padding: 70px 0;
+        }
+
+        .abertura {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pequeno {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ddb5ff;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(60px, 12vw, 110px);
+            font-weight: 400;
+            color: #fff;
+            text-shadow: 0 0 25px rgba(208, 139, 255, 0.5);
+        }
+
+        .subtitulo {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #ead8f4;
+        }
+
+        .botao {
+            margin-top: 35px;
+            padding: 14px 30px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            background: #8e44ad;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(142, 68, 173, 0.4);
+        }
+
+        /* =========================
+           CARTA
+        ========================== */
+
+        .carta {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: clamp(25px, 6vw, 55px);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25);
+        }
+
+        .carta h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 48px;
+            font-weight: 400;
+            color: #f3d8ff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .carta p {
+            color: #f4eaf8;
+            line-height: 1.9;
+            font-size: 16px;
+            margin-bottom: 22px;
+        }
+
+        .destaque {
+            color: #ffd86b;
+            font-weight: 600;
+        }
+
+        .coracao {
+            text-align: center;
+            font-size: 35px;
+            margin: 30px 0;
+            animation: pulsar 2s infinite;
+        }
+
+        @keyframes pulsar {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        /* =========================
+           FRASE ESPECIAL
+        ========================== */
+
+        .frase {
+            margin: 50px 0;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        .frase p {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(35px, 7vw, 60px);
+            color: #ffe17c;
+            line-height: 1.2;
+        }
+
+        .frase span {
+            display: block;
+            margin-top: 15px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: #dcb9ea;
+        }
+
+        /* =========================
+           MÚSICA / REFERÊNCIAS
+        ========================== */
+
+        .musica {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .card {
+            padding: 22px;
+            border-radius: 18px;
+            background: rgba(0,0,0,0.18);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .card .emoji {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #cdbbd6;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           FINAL
+        ========================== */
+
+        .final {
+            text-align: center;
+            padding: 90px 20px 40px;
+        }
+
+        .final h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(45px, 9vw, 75px);
+            font-weight: 400;
+            color: #fff;
+        }
+
+        .final p {
+            margin-top: 15px;
+            color: #ddcbe5;
+        }
+
+        .assinatura {
+            margin-top: 35px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 40px;
+            color: #ffd86b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #9d83aa;
+            font-size: 12px;
+        }
+
+        /* =========================
+           CELULAR
+        ========================== */
+
+        @media (max-width: 600px) {
+
+            .girassol {
+                font-size: 45px;
+            }
+
+            .carta {
+                padding: 25px;
+            }
+
+            .carta p {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+
+            .container {
+                width: 92%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- GIRASSÓIS -->
+    <div class="girassol g1">🌻</div>
+    <div class="girassol g2">🌻</div>
+    <div class="girassol g3">🌻</div>
+    <div class="girassol g4">🌻</div>
+    <div class="girassol g5">🌻</div>
+
+    <!-- PARTÍCULAS -->
+    <div class="particula" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particula" style="left: 25%; animation-delay: 2s;"></div>
+    <div class="particula" style="left: 40%; animation-delay: 4s;"></div>
+    <div class="particula" style="left: 55%; animation-delay: 1s;"></div>
+    <div class="particula" style="left: 70%; animation-delay: 3s;"></div>
+    <div class="particula" style="left: 85%; animation-delay: 5s;"></div>
+
+    <main class="container">
+
+        <!-- ABERTURA -->
+
+        <section class="abertura">
+
+            <div class="pequeno">
+                uma pequena carta para você
+            </div>
+
+            <h1>Melhoras, você. 💜</h1>
+
+            <p class="subtitulo">
+                🌻 Porque até os dias nublados passam.
+            </p>
+
+            <a href="#carta" class="botao">
+                Ler a carta ↓
+            </a>
+
+        </section>
+
+
+        <!-- CARTA -->
+
+        <section id="carta" class="carta">
+
+            <h2>Para você...</h2>
+
+            <p>
+                Eu não sei exatamente quais palavras seriam capazes de
+                fazer você se sentir um pouquinho melhor agora,
+                mas queria tentar mesmo assim.
+            </p>
+
+            <p>
+                Antes de qualquer coisa, quero que você saiba que
+                <span class="destaque">não precisa estar bem o tempo todo.</span>
+       Pode ter um dia ruim.
+                Pode simplesmente  deixar o tempo fazer o trabalho dele.
+            </p>
+
+            <p>
+                 não se cobre tanto por que 
+                Às vezes a gente acha que precisa ser forte o tempo inteiro,
+                quando na verdade ser forte também é saber parar,
+                descansar e aceitar um pouco de carinho.
+            </p>
+
+            <div class="coracao">
+                💜 🌻 💜
+            </div>
+
+            <p>
+                Eu queria que isso passasse logo de uma vez
+ 
+            </p>
+
+            <p>
+                Então, enquanto isso, fica aqui meu pequeno desejo:
+                que você melhore logo, que seus dias fiquem mais leves
+                e que você volte a sorrir daquele jeito que provavelmente
+                nem percebe o quanto é bonito.
+            </p>
+
+            <p>
+                E quando você estiver se sentindo melhor,
+                espero que lembre que existiu alguém aqui torcendo
+                para que isso acontecesse.
+            </p>
+
+        </section>
+
+
+        <!-- FRASE -->
+
+        <section class="frase">
+
+            <p>
+                "Mesmo quando o céu estiver nublado,
+                ainda existe um girassol procurando pelo sol."
+            </p>
+
+            <span>
+                e você também vai encontrar o seu.
+            </span>
+
+        </section>
+
+
+        <!-- MÚSICA -->
+
+        <section class="carta">
+
+            <h2>Você me lembra:</h2>
+
+            <div class="musica">
+
+                <div class="card">
+                    <div class="emoji">💜</div>
+
+                    <h3>BTS</h3>
+
+                    <p>
+                         tão Incrível quanto as músicas deles
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="emoji">☁️</div>
+
+                    <h3>Ariana Grande</h3>
+
+                    <p>
+                        Tão suave quanto as músicas dela.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="emoji">🌊</div>
+
+                    <h3>Frank Ocean</h3>
+
+                    <p>
+                        Você é tão intensa quantas as músicas dele.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL -->
+
+        <section class="final">
+
+            <h2>Fique bem. 💜</h2>
+
+            <p>
+                nao escolhi os girassóis atoa,eu sabia que você gostava então lhe dediquei eles.
+            </p>
+
+            <div class="assinatura">
+                Com carinho,<br>
+                alguém que se importa com você.
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        Feito especialmente para alguém que merece muitos girassóis. 🌻
+    </footer>
+
+
+    <script>
+
+        // Pequeno efeito de corações/girassóis ao clicar na página
+
+        document.addEventListener("click", function(event) {
+
+            const elemento = document.createElement("div");
+
+            elemento.innerHTML = Math.random() > 0.5 ? "💜" : "🌻";
+
+            elemento.style.position = "fixed";
+            elemento.style.left = event.clientX + "px";
+            elemento.style.top = event.clientY + "px";
+            elemento.style.fontSize = "22px";
+            elemento.style.pointerEvents = "none";
+            elemento.style.zIndex = "9999";
+            elemento.style.transition = "all 1s ease";
+
+            document.body.appendChild(elemento);
+
+            setTimeout(() => {
+                elemento.style.transform = "translateY(-80px)";
+                elemento.style.opacity = "0";
+            }, 50);
+
+            setTimeout(() => {
+                elemento.remove();
+            }, 1100);
+
+        });
+
+    </script>
+
+</body>
+</html>
